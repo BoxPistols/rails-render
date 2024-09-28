@@ -10,6 +10,7 @@ gem "cssbundling-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
+gem "webpacker", "~> 5.0"
 
 
 group :development, :test do
