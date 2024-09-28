@@ -1,3 +1,7 @@
 {
-    "DockerRun.DisableAutoGenerateConfig": true
+    // erb
+    "files.associations": {
+        "*.html.erb": "erb"
+    },
+    "editor.formatOnSave": true,
 }
