@@ -7,10 +7,10 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
-    "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build:css:compile": "sass --quiet --load-path=node_modules --no-source-map ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css",
     "build:css:prefix": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
     "build:css": "yarn build:css:compile && yarn build:css:prefix",
-    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
+    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --ignore 'node_modules/**/*.scss' --exec \"yarn build:css\""
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
@@ -28,6 +28,8 @@
     "webpack-cli": "^3.3.12"
   },
   "browserslist": [
-    "defaults"
+    "> 1%",
+    "last 2 versions",
+    "not dead"
   ]
 }
